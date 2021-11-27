@@ -1,0 +1,14 @@
+.homepage-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/src/assets/img/signup-background.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    min-height: calc(100vh - 115px);
+}
