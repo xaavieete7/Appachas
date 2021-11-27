@@ -1,1 +1,14 @@
-<p>signin works!</p>
+<div class="easteregg-container">
+    <div class="scene">
+        <div class="card">
+            <div class="card-face">
+                <img src="assets/img/welcome.png">
+            </div>
+        </div>
+    </div>
+</div>
+<firebase-ui (signInSuccessWithAuthResult)="successCallback($event)"
+             (signInFailure)="errorCallback($event)"
+             (uiShown)="uiShownCallback()"></firebase-ui>
+
+<button (click)="logout()">Loggguut</button>

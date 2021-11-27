@@ -1,0 +1,28 @@
+footer {
+    margin: 10px auto;
+    text-align: center;
+    color: #c2bbb9;
+    font-size: 16px;
+}
+
+.app-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.app-list li {
+    display: inline;
+    padding: 0 2px;
+}
+
+.app-list li a {
+    color: #c2bbb9;
+}
+
+footer ul.app-list li:nth-child(n+3):before {
+    content: " ";
+    border-left: 1px solid #c2bbb9;
+    display: inline-block;
+    height: 10px;
+    margin: auto 9px auto 5px;
+}

@@ -1,7 +1,8 @@
 <div class="homepage-container">
     <mat-card>
         <mat-card-content>
-            <app-signin></app-signin>
+            <app-signin *ngIf="!this.isLoggedIn"></app-signin>
+            <app-groups *ngIf="this.isLoggedIn"></app-groups>
         </mat-card-content>
 
         <mat-card-footer> </mat-card-footer>

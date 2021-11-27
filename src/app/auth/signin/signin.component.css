@@ -1,0 +1,47 @@
+.easteregg-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.easteregg-container .scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+}
+
+.easteregg-container .scene .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-face img {
+    max-width: 100%;
+}
+
+#firebaseui-auth-container .firebaseui-card-header {
+    padding: 24px 24px 0;
+}
+
+.firebaseui-tos {
+    margin-bottom: 24px !important;
+    margin-top: 0 !important;
+}
