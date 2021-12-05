@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div mat-dialog-title>
+
+        <span>Create new group</span>
+        <button mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+
+    </div>
+
+    <form [formGroup]="groupForm" (ngSubmit)="onSubmit()">
+
+        <mat-dialog-content class="mat-typography">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Group name</mat-label>
+                    <input matInput formControlName="name" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Currency</mat-label>
+                    <mat-select formControlName="currency" required>
+                        <mat-option value="EUR">Euro</mat-option>
+                        <mat-option value="USD">Dollar</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Color</mat-label>
+                    <mat-select formControlName="color" required>
+                        <mat-option value="blue">Blue</mat-option>
+                        <mat-option value="yellow">Yellow</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+        </mat-dialog-content>
+
+        <mat-dialog-actions>
+            <button type="submit" mat-button [mat-dialog-close]="true" [disabled]="!groupForm.valid">Create new group</button>
+        </mat-dialog-actions >
+
+    </form>
+
+</div>

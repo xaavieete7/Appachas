@@ -1,3 +1,15 @@
+.mat-drawer-container {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow: hidden;
+    background-color: #fafafa;
+    color: rgba(0,0,0,.87);
+}
+
+
 .mat-topbar {
   flex-direction: row;
   box-sizing: border-box;
@@ -22,4 +34,87 @@
 .logo-container .logo {
   width: 35px;
   margin-right: 6px;
+}
+
+.premium-feature {
+    place-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 100%;
+    max-width: 100%;
+}
+
+.premium-button .mat-button .mat-button-wrapper .mat-icon {
+    color: #f7ad00;
+}
+
+.avatar-text {
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+    margin: 16px 16px 16px 0;
+    cursor: pointer;
+}
+
+.username {
+    place-content: center flex-end;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+}
+
+.email {
+    place-content: center flex-end;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 13px;
+    font-weight: normal;
+    color: #7b7b7b;
+    line-height: 1;
+}
+
+.avatar-user {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #cfcfcf;
+}
+
+
+/* ---------- */
+.sidenav-container {
+    min-width: 300px;
+    display: block;
+}
+
+.mat-list-base {
+    padding-top: 0;
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.logo-container {
+    place-content: center flex-start;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    color: initial;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 10px;
+}
+
+.logo {
+    width: 35px;
+    margin-right: 6px;
 }

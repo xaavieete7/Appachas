@@ -15,8 +15,6 @@ export class SigninComponent implements OnInit {
 
     ngOnInit(): void { }
 
-
-
     logout() {
         this.afAuth.signOut().then(function () {
             console.log("FUNCIONA");

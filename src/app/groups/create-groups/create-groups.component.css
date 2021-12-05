@@ -1,0 +1,20 @@
+.create-group {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.create-group button {
+    margin-top: 24px;
+    margin-bottom: 30px;
+    color: white;
+    background-color: #f2774a;
+    width: unset;
+    padding: 0 26px;
+    border-radius: 29px;
+}
+
+.create-group h4 {
+    margin: 20px 0 20px 0;
+    font-weight: bold;
+}

@@ -1,0 +1,62 @@
+h3 {
+    margin-top: 20px;
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+.groups {
+    padding: 0;
+    margin: 20px 0;
+    list-style-type: none;
+    text-align: left;
+    min-width: 280px;
+}
+
+.groups .groups-item a {
+    font-size: 15px;
+    line-height: 0;
+    margin: 0;
+    padding: 15px 10px 15px 17px;
+    display: block;
+    text-decoration: none;
+    color: unset;
+    cursor: pointer;
+}
+
+
+.groups .groups-item .dot {
+    height: 12px;
+    width: 12px;
+    background-color: #999;
+    border-radius: 50%;
+    margin-right: 17px;
+    display: inline-block;
+}
+
+.groups .groups-item a:hover {
+    background: #f3f3f3;
+}
+
+.groups .groups-item a span {
+    background-color: rgb(233, 30, 99);
+    color: rgb(233, 30, 99);
+}
+
+.groups .groups-item.new-group a .material-icons {
+    font-size: 14px;
+    margin-right: 19px;
+    margin-left: -1px;
+    color: #999;
+}
+
+.groups .groups-item.new-group a {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.groups .new-group mat-icon {
+    width: 14px;
+    height: 14px;
+}

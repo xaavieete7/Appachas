@@ -1,0 +1,31 @@
+
+.container {
+    width: 300px;
+}
+
+.mat-dialog-title button {
+    margin-left: 100px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.mat-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.mat-form-field-infix {
+    display: block;
+    position: relative;
+    flex: auto;
+    min-width: 0;
+    width: 180px;
+}
+
+.mat-dialog-actions button {
+    width: 100%;
+}

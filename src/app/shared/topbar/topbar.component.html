@@ -1,11 +1,62 @@
-<mat-toolbar class="mat-topbar">
-    <button mat-icon-button>
-        <mat-icon>menu</mat-icon>
-    </button>
 
-    <a routerLink="/" class="logo-container">
-        <img src="assets/img/icon.png" class="logo">
-        <span>Appachas</span>
-    </a>
+    <mat-sidenav #sidenav class="example-sidenav" mode="side">
 
-</mat-toolbar>
+        <div class="sidenav-container">
+            <mat-nav-list class="mat-list-base">
+
+                <a routerLink="/" class="logo-container">
+                    <img src="/assets/img/icon.png" class="logo">
+                    <span>Appachas</span>
+                </a>
+
+            </mat-nav-list>
+        </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar class="mat-topbar">
+
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <a routerLink="/" class="logo-container">
+                <img src="assets/img/icon.png" class="logo">
+                <span>Appachas</span>
+            </a>
+
+            <div class="premium-feature" *ngIf="this.isLoggedIn">
+
+                <!-- <button mat-button>
+                    <mat-icon>grade</mat-icon>
+                    Go Premium
+                </button> -->
+
+            </div>
+
+            <div [matMenuTriggerFor]="menu" *ngIf="this.isLoggedIn" class="avatar-text">
+                <span class="username">{{ this.username }}</span>
+                <span class="email">{{ this.email }}</span>
+            </div>
+
+            <img [matMenuTriggerFor]="menu" *ngIf="this.photoURL != null && this.isLoggedIn" src="{{ this.photoURL }}" class="avatar-user">
+            <img [matMenuTriggerFor]="menu" *ngIf="this.photoURL == null && this.isLoggedIn" src="assets/img/broken-avatar.png" class="avatar-user">
+
+            <mat-menu #menu="matMenu">
+
+                <button mat-menu-item *ngIf="this.isLoggedIn" (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Log out</span>
+                </button>
+
+                <button mat-menu-item *ngIf="this.isLoggedIn">
+                    <mat-icon>delete_outline</mat-icon>
+                    <span>Delete account</span>
+                </button>
+
+            </mat-menu>
+
+        </mat-toolbar>
+    </mat-sidenav-content>
+

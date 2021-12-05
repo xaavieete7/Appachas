@@ -11,7 +11,8 @@ export const environment = {
         storageBucket: "appachas-f90b1.appspot.com",
         messagingSenderId: "973366304473",
         appId: "1:973366304473:web:b7249a9a445bbb11df28c8",
-        measurementId: "G-YJJD85F373"
+        measurementId: "G-YJJD85F373",
+        databaseURL: "https://appachas-f90b1-default-rtdb.europe-west1.firebasedatabase.app"
     }
 };
 

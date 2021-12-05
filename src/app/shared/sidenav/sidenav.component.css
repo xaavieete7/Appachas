@@ -1,0 +1,42 @@
+.sidenav-container {
+    min-width: 300px;
+    display: block;
+}
+
+.mat-list-base {
+    padding-top: 0;
+    display: block;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.logo-container {
+    place-content: center flex-start;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    color: initial;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 10px;
+}
+
+.logo {
+    width: 35px;
+    margin-right: 6px;
+}
+
+
+.mat-drawer-transition .mat-drawer-backdrop {
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-property: background-color,visibility;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    visibility: visible;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    background-color: rgba(0,0,0,.6);
+}
