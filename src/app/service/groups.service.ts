@@ -3,7 +3,7 @@ import {AngularFireDatabase, AngularFireList} from '@angular/fire/compat/databas
 import { getDatabase, ref, set } from 'firebase/database';
 import Group from '../models/group';
 import Member from "../models/member";
-import {child, get, onValue} from "@angular/fire/database";
+import {child, get} from "@angular/fire/database";
 import {AuthService} from "./auth.service";
 
 
@@ -39,16 +39,11 @@ export class GroupsService {
 
     addMember(uid: string, gid: string | null) {
 
-        console.log("uid: " + uid);
-        console.log("gid: " + gid);
-
         const db = getDatabase();
         set(ref(db, 'members/' + gid + '/' + uid), {
             uid: uid,
             active: true
         });
-
-        console.log(this.getGroupMembers(gid));
 
     }
 

@@ -36,6 +36,7 @@ import { NewGroupFormComponent } from './groups/new-group-form/new-group-form.co
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
+import { MainGroupComponent } from './groups/main-group/main-group.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -75,7 +76,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
         SidenavComponent,
         ListGroupsComponent,
         CreateGroupsComponent,
-        NewGroupFormComponent
+        NewGroupFormComponent,
+        MainGroupComponent
     ],
     imports: [
         BrowserModule,
