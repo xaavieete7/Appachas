@@ -1,37 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {GroupsService} from "../../service/groups.service";
-import {AuthService} from "../../service/auth.service";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
-    selector: 'app-main-group',
-    templateUrl: './main-group.component.html',
-    styleUrls: ['./main-group.component.css']
+    selector: 'app-main-group-debts',
+    templateUrl: './main-group-debts.component.html',
+    styleUrls: ['./main-group-debts.component.css']
 })
-export class MainGroupComponent implements OnInit {
+export class MainGroupDebtsComponent implements OnInit {
 
     links = [['Transactions', 'join'], ['Settle debts', 'debts'], ['Members', 'members'], ['Recent activity', 'activities']];
-    group_id: String | null | undefined;
-    tab: String | null | undefined;
-    activeLink: String | null | undefined;
+    group_id: String | null | undefined
+    activeLink = this.links[1][0];
     name: string | undefined;
     color: string | undefined;
     currency: string | undefined;
 
-
-    constructor(private route: ActivatedRoute, private redirectRouter: Router, private service: GroupsService) {
-
-
-    }
+    constructor(private route: ActivatedRoute, private service: GroupsService) {}
 
     ngOnInit(): void {
 
         // Get id param
         this.route.paramMap.subscribe( paramMap => {
             this.group_id = paramMap.get('id');
-            this.tab = paramMap.get('tab');
-            this.activeLink = this.tab;
         });
 
         // Get group information
@@ -46,6 +37,5 @@ export class MainGroupComponent implements OnInit {
     getLink(url: string) : string {
         return "/group/" + this.group_id + "/" + url;
     }
-
 
 }

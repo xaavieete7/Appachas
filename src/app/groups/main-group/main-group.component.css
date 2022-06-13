@@ -1,0 +1,47 @@
+app-main-group-header {
+    min-height: 250px;
+    display: flex;
+    color: #fff;
+}
+
+.tabs-container {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100vw;
+    overflow: auto;
+}
+
+.tabs-container div {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    color: white;
+}
+
+.tabs-container div nav a {
+    color: white;
+}
+
+.mat-tab-label-active {
+    border-color: white;
+    color: white;
+}
+.mat-tab-link.mat-tab-label-active {
+    opacity: 1;
+}
+
+.cards-container {
+    max-width: 660px;
+    width: 100%;
+    padding: 24px 0;
+    margin: 0 auto;
+    min-height: calc(100vh - 200px);
+}
+
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .cards-container {
+        max-width: 100vw;
+    }
+}

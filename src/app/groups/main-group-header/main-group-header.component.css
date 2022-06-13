@@ -1,0 +1,32 @@
+.group-header-container {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+}
+
+.group-header-item-left {
+    margin-right: 0px;
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    place-content: stretch flex-end;
+    align-items: stretch;
+    flex-direction: row;
+    display: flex;
+    max-width: 50%;
+    margin: 5px 0;
+    align-self: center;
+}
+
+.group-header-item-right {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 50%;
+    margin: 5px 0;
+    align-self: center;
+}
+
+app-main-group-info {
+    display: block;
+    margin-left: 10px;
+}

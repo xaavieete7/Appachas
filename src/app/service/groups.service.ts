@@ -5,6 +5,8 @@ import Group from '../models/group';
 import Member from "../models/member";
 import {child, get} from "@angular/fire/database";
 import {AuthService} from "./auth.service";
+import {Router} from "@angular/router";
+import {Subject} from "rxjs";
 
 
 @Injectable({
@@ -17,7 +19,7 @@ export class GroupsService {
     private dbGroupPath = "/groups";
     private dbMembersPath = "/members";
 
-    constructor(private db: AngularFireDatabase, private auth: AuthService) {
+    constructor(private db: AngularFireDatabase, private auth: AuthService, private router: Router) {
         this.groupRef = db.list(this.dbGroupPath);
         this.membersRef = db.list(this.dbMembersPath);
     }
@@ -32,7 +34,8 @@ export class GroupsService {
 
             this.addMember(this.auth.getCurrentUserId(), group.key);
 
-            console.log(this.getGroup(group.key));
+            // Redirect to groups
+            this.router.navigate(['/group', group.key]);
         });
 
     }
@@ -47,27 +50,45 @@ export class GroupsService {
 
     }
 
-    getGroupMembers(gid: string | null): any {
+    getGroupMembers(gid: String | null | undefined): any {
+
+        const members = new Subject<unknown>();
+
+        this.db.list('/members/' + gid)
+            .valueChanges()
+            .subscribe(items => {
+                members.next(items);
+            });
+
+        return members.asObservable();
+    }
+
+    getGroup(id: String | null | undefined): any {
+
+        const info = new Subject<unknown>();
+
+        this.db.list('/groups/' + id)
+            .valueChanges()
+            .subscribe(items => {
+                info.next(items);
+            });
+
+        return info.asObservable();
+    }
+
+    getGroups(uid: string | undefined) {
 
         const dbRef = ref(getDatabase());
-        get(child(dbRef, '/members/' + gid)).then((snapshot) => {
+        get(child(dbRef, '/members/')).then((snapshot) => {
             if (snapshot.exists()) {
                 return snapshot.val();
             } else {
                 return "No data available";
             }
         });
+
     }
 
-    getGroup(id: string | null): any {
-
-        const dbRef = ref(getDatabase());
-        get(child(dbRef, '/groups/' + id)).then((snapshot) => {
-            if (snapshot.exists()) {
-                return snapshot.val();
-            }
-        });
-    }
 }
 
 

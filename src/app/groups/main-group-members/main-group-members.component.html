@@ -1,0 +1,26 @@
+<h3 class="mat-subheader">Members</h3>
+
+<div *ngFor="let member of members">
+    <button mat-list-item class="mat-list-item mat-focus-indicator mat-2-line">
+
+        <div class="mat-list-item-content">
+
+            <!-- Avatar app -->
+            <div style="background-color: darkblue; width: 45px; height: 45px;"></div>
+
+            <div class="container">
+                <span class="mat-line name">{{member[1]}}</span>
+                <span class="mat-line spent">Spend: €66</span>
+            </div>
+
+            <strong class="amount">€0</strong>
+
+        </div>
+
+    </button>
+
+    <mat-divider></mat-divider>
+</div>
+
+
+

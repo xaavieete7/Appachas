@@ -37,6 +37,15 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import { MainGroupComponent } from './groups/main-group/main-group.component';
+import { MainGroupHeaderComponent } from './groups/main-group-header/main-group-header.component';
+import { MainGroupCirclesComponent } from './groups/main-group-circles/main-group-circles.component';
+import { MainGroupInfoComponent } from './groups/main-group-info/main-group-info.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import { MainGroupJoinComponent } from './groups/main-group-join/main-group-join.component';
+import { MainGroupDebtsComponent } from './groups/main-group-debts/main-group-debts.component';
+import { MainGroupMembersComponent } from './groups/main-group-members/main-group-members.component';
+import { MainGroupActivitiesComponent } from './groups/main-group-activities/main-group-activities.component';
+import { JoinButtonComponent } from './groups/join-button/join-button.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -77,7 +86,15 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
         ListGroupsComponent,
         CreateGroupsComponent,
         NewGroupFormComponent,
-        MainGroupComponent
+        MainGroupComponent,
+        MainGroupHeaderComponent,
+        MainGroupCirclesComponent,
+        MainGroupInfoComponent,
+        MainGroupJoinComponent,
+        MainGroupDebtsComponent,
+        MainGroupMembersComponent,
+        MainGroupActivitiesComponent,
+        JoinButtonComponent
     ],
     imports: [
         BrowserModule,
@@ -100,7 +117,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
         MatInputModule,
         MatSelectModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        MatTabsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

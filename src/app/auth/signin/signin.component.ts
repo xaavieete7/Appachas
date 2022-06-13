@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {FirebaseUISignInFailure, FirebaseUISignInSuccessWithAuthResult} from 'firebaseui-angular';
+import {AuthService} from "../../service/auth.service";
 
 
 @Component({
@@ -11,7 +12,7 @@ import {FirebaseUISignInFailure, FirebaseUISignInSuccessWithAuthResult} from 'fi
 export class SigninComponent implements OnInit {
 
 
-    constructor(private afAuth: AngularFireAuth) { }
+    constructor(private afAuth: AngularFireAuth, private auth: AuthService) { }
 
     ngOnInit(): void { }
 
@@ -24,7 +25,7 @@ export class SigninComponent implements OnInit {
     }
 
     successCallback(data: FirebaseUISignInSuccessWithAuthResult) {
-        console.log('successCallback', data);
+        this.auth.addUser(data);
     }
 
     errorCallback(data: FirebaseUISignInFailure) {

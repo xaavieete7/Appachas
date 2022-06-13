@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Color theme */
+.group-color-theme-yellow {
+    background-color: #4caf50;
+}
+
+/* CSS main-group-tabs */
+.mat-subheader {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0,0,0,.54);
+}
+
+mat-card {
+    padding: 0 !important;
+}

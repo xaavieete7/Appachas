@@ -26,7 +26,7 @@
                 <span>Appachas</span>
             </a>
 
-            <div class="premium-feature" *ngIf="this.isLoggedIn">
+            <div class="premium-feature">
 
                 <!-- <button mat-button>
                     <mat-icon>grade</mat-icon>
@@ -56,6 +56,8 @@
                 </button>
 
             </mat-menu>
+
+            <button *ngIf="!isLoggedIn" mat-stroked-button>Sign in</button>
 
         </mat-toolbar>
     </mat-sidenav-content>

@@ -1,28 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {GroupsService} from "../../service/groups.service";
-import {AuthService} from "../../service/auth.service";
-import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
-    selector: 'app-main-group',
-    templateUrl: './main-group.component.html',
-    styleUrls: ['./main-group.component.css']
+    selector: 'app-main-group-activities',
+    templateUrl: './main-group-activities.component.html',
+    styleUrls: ['./main-group-activities.component.css']
 })
-export class MainGroupComponent implements OnInit {
+export class MainGroupActivitiesComponent implements OnInit {
 
     links = [['Transactions', 'join'], ['Settle debts', 'debts'], ['Members', 'members'], ['Recent activity', 'activities']];
-    group_id: String | null | undefined;
-    tab: String | null | undefined;
-    activeLink: String | null | undefined;
+    group_id: String | null | undefined
+    activeLink = this.links[3][0];
     name: string | undefined;
     color: string | undefined;
     currency: string | undefined;
 
-
-    constructor(private route: ActivatedRoute, private redirectRouter: Router, private service: GroupsService) {
-
-
+    constructor(private route: ActivatedRoute, private service: GroupsService) {
     }
 
     ngOnInit(): void {
@@ -30,8 +24,6 @@ export class MainGroupComponent implements OnInit {
         // Get id param
         this.route.paramMap.subscribe( paramMap => {
             this.group_id = paramMap.get('id');
-            this.tab = paramMap.get('tab');
-            this.activeLink = this.tab;
         });
 
         // Get group information
@@ -41,11 +33,12 @@ export class MainGroupComponent implements OnInit {
             this.name = res[2];
         });
 
+
+
     }
 
     getLink(url: string) : string {
         return "/group/" + this.group_id + "/" + url;
     }
-
 
 }

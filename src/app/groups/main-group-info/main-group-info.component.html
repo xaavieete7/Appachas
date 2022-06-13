@@ -1,0 +1,22 @@
+<h1>{{name}}</h1>
+
+<div class="attrs">
+
+    <div class="transactions">
+        Transactions:
+        <strong>2</strong>
+    </div>
+
+    <div class="members">
+        Members:
+        <strong>{{members}}</strong>
+    </div>
+
+    <span class="amount">
+         Total paid:
+        <strong> €215.40 </strong>
+    </span>
+
+</div>
+
+<app-join-button *ngIf="!isloggedIn"></app-join-button>

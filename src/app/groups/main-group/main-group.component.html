@@ -1,1 +1,32 @@
-<p>main-group works!</p>
+<app-main-group-header></app-main-group-header>
+
+<div class="tabs-container group-color-theme-{{color}}">
+    <div>
+        <nav mat-tab-nav-bar color="white">
+            <a mat-tab-link *ngFor="let link of links" [active]="activeLink == link[1]" routerLink="{{getLink(link[1])}}">{{link[0]}}</a>
+        </nav>
+    </div>
+</div>
+
+<div class="cards-container" *ngIf="tab != null">
+
+    <div style="display: flex; flex-flow: column;">
+
+        <mat-card>
+            <mat-action-list>
+
+                <app-main-group-join *ngIf="tab == 'join'"></app-main-group-join>
+                <app-main-group-debts *ngIf="tab == 'debts'"></app-main-group-debts>
+                <app-main-group-members *ngIf="tab == 'members'"></app-main-group-members>
+                <app-main-group-activities *ngIf="tab == 'activities'"></app-main-group-activities>
+
+            </mat-action-list>
+        </mat-card>
+
+    </div>
+
+</div>
+
+
+
+

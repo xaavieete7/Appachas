@@ -1,0 +1,30 @@
+.mat-list-item{
+    height: 72px;
+}
+
+.mat-list-item-content {
+    width: 100%;
+}
+
+.container {
+    padding-left: 16px;
+}
+
+.container .spent {
+    padding: 2px 0;
+    font-size: 13px;
+    color: #c2bbb9;
+    opacity: .9;
+}
+
+.amount {
+    margin-left: auto;
+}
+
+.mat-list-item .mat-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    box-sizing: border-box;
+}
